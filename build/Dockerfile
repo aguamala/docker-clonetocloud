@@ -1,6 +1,6 @@
 FROM aguamala/centos:7
 MAINTAINER "gabo" <aguamala@deobieta.com>
-RUN yum -y install lsycnd
+RUN yum -y install lsyncd
 
 ENV RCLONE_VERSION 1.28
 
