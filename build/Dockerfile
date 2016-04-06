@@ -9,7 +9,7 @@ ADD http://downloads.rclone.org/rclone-v${RCLONE_VERSION}-linux-amd64.zip /
 RUN unzip rclone-v${RCLONE_VERSION}-linux-amd64.zip  && \
     mv rclone-v${RCLONE_VERSION}-linux-amd64/rclone /usr/local/bin/rclone &&\
     rm -rf /rclone-v${RCLONE_VERSION}-linux-amd64.zip && \
-    rm -rf /rclone-v${RCLONE_VERSION}-linux-amd64 && \
+    rm -rf /rclone-v${RCLONE_VERSION}-linux-amd64 
 
 COPY lsyncd-backup.conf /lsyncd-backup.conf
 COPY lsyncd-sync.conf /lsyncd-sync.conf
