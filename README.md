@@ -8,7 +8,7 @@ The following environment variables are honored for configuring clonetocloud:
 
 -	`-e RCLONE_ACCESS_KEY_ID=...` (S3 ACCESS KEY )
 -	`-e RCLONE_SECRET_ACCESS_KEY=...` (S3 SECRET KEY)
--	`-e RCLONE_TYPE=...` (Only s3 for now, override lsyncd and rcloen config for other backend)
+-	`-e RCLONE_TYPE=...` (Only s3 for now, override lsyncd and rclone config to use another backend)
 -	`-e LSYNCD_SOURCE=...` (Source directory)
 -	`-e LSYNCD_TARGET=...` (rclone remote) example: remote:bucket/path
 -	`-e LSYNCD_SYNC=...` (Set to enable sync mode, deletes will take effect)
