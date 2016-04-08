@@ -5,16 +5,18 @@ set -e
 if [ "$1" = 'lsyncd' ]; then
 
     if [ ! -e /root/.rclone.conf ]; then
-          if [[ -z "$RCLONE_ACCESS_KEY_ID" ]] || [ -z "$RCLONE_SECRET_ACCESS_KEY" ] || ["$RCLONE_TYPE"]; then
+          if [ -z "$RCLONE_ACCESS_KEY_ID" ] || [ -z "$RCLONE_SECRET_ACCESS_KEY" ] || [ -z "$RCLONE_TYPE" ]; then
             echo >&2 'error: missing RCLONE_ACCESS_KEY_ID or RCLONE_SECRET_ACCESS_KEY or RCLONE_TYPE environment variables'
             exit 1
           fi
 
-          if [ -n "$RCLONE_REMOTE_NAME" ]; then
-            echo "[remote]" >> /root/.rclone.conf
+          if [ -z "$RCLONE_REMOTE_NAME" ]; then
+             echo "[remote]" >> /root/.rclone.conf
+          else
+            echo "[$RCLONE_REMOTE_NAME]" >> /root/.rclone.conf
           fi
 
-          if [ "$RCLONE_TYPE" ! 's3' ]; then
+          if [ "$RCLONE_TYPE" != 's3' ]; then
             #FIXME: support more backends
             echo >&2 'sorry, only s3 quickstart is supported for the moment, please copy or share rclone.conf to /root/.rclone.conf'
             exit 1
