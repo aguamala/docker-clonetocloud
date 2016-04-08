@@ -1,6 +1,6 @@
 # docker-clonetocloud
 
-Backup or synchronize directories to S3. Lsyncd + rclone
+Backup or synchronize directories to cloud storage. Lsyncd + rclone
 
 ## USAGE
 
